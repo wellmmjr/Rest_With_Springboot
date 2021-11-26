@@ -1,19 +1,29 @@
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\exception\ExceptionResponse.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\exception\handler\CustomizedResponseEntityExceptionHandler.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\converter\DozerConverter.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\repository\BooksRepository.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\data\model\Books.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\services\BooksServices.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\data\vo\v1\BooksVO.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\serialization\converter\YamlJackson2HttpMessageConverter.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\config\SwaggerConfig.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\Startup.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\controller\BooksController.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\repository\PersonRepository.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\data\model\Person.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\exception\ResourceNotFoundException.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\config\WebConfig.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\Greeting.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\controller\PersonController.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\services\PersonServices.java
-C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\12 RestWithSpringboot Person With JWT and SpringSecurity\src\main\java\br\com\wellmmjr\data\vo\v1\PersonVO.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\exception\ExceptionResponse.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\security\AccountCredentialsVO.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\controller\BooksController.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\repository\PersonRepository.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\services\BooksServices.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\config\SecurityConfig.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\vo\v1\PersonVO.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\serialization\converter\YamlJackson2HttpMessageConverter.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\config\SwaggerConfig.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\model\Permission.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\exception\InvalidJWTAuthenticationException.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\exception\ResourceNotFoundException.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\model\Person.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\controller\PersonController.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\security\jwt\JwtTokenFilter.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\model\Books.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\security\jwt\JwtTokenProvider.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\config\WebConfig.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\Startup.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\converter\DozerConverter.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\vo\v1\BooksVO.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\controller\AuthController.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\data\model\Users.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\services\PersonServices.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\repository\UserRepository.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\security\jwt\JwtConfigurer.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\repository\BooksRepository.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\services\UserServices.java
+C:\Users\junio\Documents\Projetos Treinamento\UdemySpringBoot\13 RestWithSpringboot Person With PATCH\src\main\java\br\com\wellmmjr\exception\handler\CustomizedResponseEntityExceptionHandler.java

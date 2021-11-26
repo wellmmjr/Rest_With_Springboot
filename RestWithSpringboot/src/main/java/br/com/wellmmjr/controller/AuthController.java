@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.wellmmjr.repository.UserRepository;
 import br.com.wellmmjr.security.AccountCredentialsVO;
 import br.com.wellmmjr.security.jwt.JwtTokenProvider;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+@Api(tags = "Authentication Endpoint")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -36,7 +38,7 @@ public class AuthController {
 	UserRepository repository;
 	
 	
-	@ApiOperation(value="Authenticate a user by its credential")
+	@ApiOperation(value="Authenticate a user and return its token")
 	@PostMapping(value = "/signin", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public ResponseEntity signin(@RequestBody AccountCredentialsVO auth){
