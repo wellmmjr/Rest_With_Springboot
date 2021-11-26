@@ -29,7 +29,7 @@ public class PersonServices {
 	}
 	
 	public PersonVO updatePerson(PersonVO person) {
-		var entity = repository.findById(person.getId()). // atenção: este findById retorna um Person, visto que é da classe PersonRepository e ñ metodo desta propria
+		var entity = repository.findById(person.getKey()). // atenção: este findById retorna um Person, visto que é da classe PersonRepository e ñ metodo desta propria
 				orElseThrow(() -> new ResourceNotFoundException("no records found for this id")) ;
 
 		entity.setAddress(person.getAddress());

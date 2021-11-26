@@ -1,5 +1,8 @@
 package br.com.wellmmjr.controller;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,30 +26,27 @@ public class PersonController {
 	@Autowired
 	private PersonServices services;
 	
-//	@RequestMapping(value="/create", method = RequestMethod.POST, 
-//			produces= MediaType.APPLICATION_JSON_VALUE, 
-//			consumes= MediaType.APPLICATION_JSON_VALUE) <--- anotações utilizadas em versões anteriores do springboot para com seus verbos
+
 	@PostMapping(value = "/create", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO create(@RequestBody PersonVO person){
 		
-		return services.createPerson(person);
+		PersonVO personVO = services.createPerson(person);
+		personVO.add(linkTo(methodOn(PersonController.class).findById(personVO.getKey())).withSelfRel());
+		return personVO;
 		
 	}
 	
-//	@RequestMapping(value="/update", method = RequestMethod.PUT, 
-//			produces= MediaType.APPLICATION_JSON_VALUE, 
-//			consumes= MediaType.APPLICATION_JSON_VALUE)
 	@PutMapping(value = "/update", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO update(@RequestBody PersonVO person){
 		
-		return services.updatePerson(person);
+		PersonVO personVO = services.updatePerson(person);
+		personVO.add(linkTo(methodOn(PersonController.class).findById(personVO.getKey())).withSelfRel());
+		return personVO;
 		
 	}
 	
-//	@RequestMapping(value="/delete/{id}", 
-//			method = RequestMethod.DELETE) 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id" ) Long id){
 		
@@ -55,21 +55,24 @@ public class PersonController {
 		
 	}
 	
-//	@RequestMapping(method = RequestMethod.GET, 
-//			produces= MediaType.APPLICATION_JSON_VALUE)
 	@GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
 	public List<PersonVO> findAll(){
+		List<PersonVO> personVO = services.findAll();
 		
-		return services.findAll();
+		personVO.stream().forEach(p ->p.add (
+				linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel())
+		);
+		
+		return personVO;
 		
 	}
 
-//	@RequestMapping(value="/{id}", method = RequestMethod.GET, 
-//			produces= MediaType.APPLICATION_JSON_VALUE)
 	@GetMapping(value="/{id}", produces = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO findById(@PathVariable("id" ) Long id){
 		
-		return services.findById(id);
+		PersonVO personVO = services.findById(id);
+		personVO.add(linkTo(methodOn(PersonController.class).findById(id)).withSelfRel());
+		return personVO;
 		
 	}
 
