@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.wellmmjr.converter.DozerConverter;
 import br.com.wellmmjr.data.model.Person;
-import br.com.wellmmjr.data.vo.PersonVO;
+import br.com.wellmmjr.data.vo.v1.PersonVO;
 import br.com.wellmmjr.exception.ResourceNotFoundException;
 import br.com.wellmmjr.repository.PersonRepository;
 
