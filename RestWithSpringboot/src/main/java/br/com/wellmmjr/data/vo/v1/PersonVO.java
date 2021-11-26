@@ -26,8 +26,18 @@ public class PersonVO extends ResourceSupport implements Serializable{
 	
 	private String gender;
 	
+	private Boolean enabled;
+	
 	public PersonVO() {
 		
+	}
+	
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	public String getFirstName() {
@@ -67,7 +77,7 @@ public class PersonVO extends ResourceSupport implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(address, firstName, gender, key, secondName);
+		result = prime * result + Objects.hash(address, enabled, firstName, gender, key, secondName);
 		return result;
 	}
 
@@ -80,9 +90,9 @@ public class PersonVO extends ResourceSupport implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		PersonVO other = (PersonVO) obj;
-		return Objects.equals(address, other.address) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(gender, other.gender) && Objects.equals(key, other.key)
-				&& Objects.equals(secondName, other.secondName);
+		return Objects.equals(address, other.address) && Objects.equals(enabled, other.enabled)
+				&& Objects.equals(firstName, other.firstName) && Objects.equals(gender, other.gender)
+				&& Objects.equals(key, other.key) && Objects.equals(secondName, other.secondName);
 	}
 
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.wellmmjr.converter.DozerConverter;
 import br.com.wellmmjr.data.model.Person;
@@ -38,6 +39,14 @@ public class PersonServices {
 		entity.setGender(person.getGender());
 		
 		return DozerConverter.parseObject(repository.save(entity), PersonVO.class);
+	}
+
+	@Transactional //notação para garantir qualidade ACID dos dados
+	public void disablePerson(Long id) {
+		repository.findById(id).
+				orElseThrow(() -> new ResourceNotFoundException("no records found for this id")) ;
+		
+		repository.disablePersons(id);
 	}
 	
 	public void deletePerson(Long id) {
