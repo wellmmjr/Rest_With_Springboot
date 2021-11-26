@@ -1,8 +1,8 @@
 package br.com.wellmmjr.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -63,9 +63,32 @@ public class PersonServices {
 	}
 	
 	
-	public List<PersonVO> findAll() {
+	public Page<PersonVO> findAllByName(String firstName, Pageable pageable) {		
+		var page = repository.findPersonByName(firstName, pageable);
+		return page.map(this::convertToPersonVO);
+	}
+	
+	public Page<PersonVO> findAll(Pageable pageable) {
+/*		possibilita a lista com paginação e limite por pagina, ainda sendo convertida por DozerConverter e retorna List<PersonVO>
+		var entities = repository.findAll(pageable).getContent();
 		
-		return DozerConverter.parseListObjects(repository.findAll(), PersonVO.class);
+		return DozerConverter.parseListObjects(entities, PersonVO.class);*/
+		
+		/*-----------------------------------------------------------------------------
+		desta maneira possibilita o SPRING de gerar o HATEOAS automaticamente com indicativos de:
+			prox pag,
+			pag anterior
+			primeira pag
+			ultima pag
+			assim como: qtd total de registro, qtd total de pag, etc
+			SEGUE:*/
+		
+		var page = repository.findAll(pageable);
+		return page.map(this::convertToPersonVO);
+	}
+
+	private PersonVO convertToPersonVO(Person entity) {
+		return DozerConverter.parseObject(entity, PersonVO.class);
 	}
 	
 }
