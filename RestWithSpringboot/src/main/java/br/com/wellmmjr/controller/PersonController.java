@@ -30,7 +30,7 @@ import br.com.wellmmjr.services.PersonServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-//@CrossOrigin desta maneira CORS será implementado de maneira global para os métodos desta classe
+
 @Api(value="Person Endpoints", description = "Accepts and provides entity Person's xml, x-yaml, json contents", 
 tags= {"Person Endpoints", "Person"})
 @RestController
@@ -43,8 +43,6 @@ public class PersonController {
 	@Autowired
 	private PagedResourcesAssembler<PersonVO> avengeeers_assemble_yeeeee;
 	
-
-//	@CrossOrigin desta maneira o CORS será implementado apenas para este método
 	@ApiOperation(value="Allows create Person by this endpoint")
 	@PostMapping(value = "/create", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
@@ -101,7 +99,7 @@ public class PersonController {
 		
 	}
 	
-	@CrossOrigin(origins= {"https://www.google.com"}) // desta maneira o CORS pode ser configurado para um ou mais dominios para cruzamento
+	@CrossOrigin(origins= {"https://www.google.com"}) 
 	@ApiOperation(value="Deliver a list with all Person in database")
 	@GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
 	public ResponseEntity<?> findAll(
@@ -112,8 +110,6 @@ public class PersonController {
 		var sortDirection = "desc".equalsIgnoreCase(sort) ? Direction.DESC : Direction.ASC;
 		
 		Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "firstName"));
-		
-//		List<PersonVO> personVO = services.findAll(pageable); -> usado anteriormente para lista das paginas, porem agora o retorno será do tipo Page
 		
 		Page<PersonVO> persons = services.findAll(pageable);
 		
