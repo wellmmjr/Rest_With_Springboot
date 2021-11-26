@@ -22,7 +22,7 @@ public class DozerConverterTest {
     @Test
     public void parseEntityToVOTest() {
         PersonVO output = DozerConverter.parseObject(inputObject.mockEntity(), PersonVO.class);
-        Assert.assertEquals(0L, output.getId());
+        Assert.assertEquals(Long.valueOf(0L), output.getKey());
         Assert.assertEquals("First Name Test0", output.getFirstName());
         Assert.assertEquals("Last Name Test0", output.getSecondName());
         Assert.assertEquals("Addres Test0", output.getAddress());
@@ -34,7 +34,7 @@ public class DozerConverterTest {
         List<PersonVO> outputList = DozerConverter.parseListObjects(inputObject.mockEntityList(), PersonVO.class);
         PersonVO outputZero = outputList.get(0);
         
-        Assert.assertEquals(0L, outputZero.getId());
+        Assert.assertEquals(Long.valueOf(0L), outputZero.getKey());
         Assert.assertEquals("First Name Test0", outputZero.getFirstName());
         Assert.assertEquals("Last Name Test0", outputZero.getSecondName());
         Assert.assertEquals("Addres Test0", outputZero.getAddress());
@@ -42,7 +42,7 @@ public class DozerConverterTest {
         
         PersonVO outputSeven = outputList.get(7);
         
-        Assert.assertEquals(7L, outputSeven.getId());
+        Assert.assertEquals(Long.valueOf(7L), outputSeven.getKey());
         Assert.assertEquals("First Name Test7", outputSeven.getFirstName());
         Assert.assertEquals("Last Name Test7", outputSeven.getSecondName());
         Assert.assertEquals("Addres Test7", outputSeven.getAddress());
@@ -50,7 +50,7 @@ public class DozerConverterTest {
         
         PersonVO outputTwelve = outputList.get(12);
         
-        Assert.assertEquals(12L, outputTwelve.getId());
+        Assert.assertEquals(Long.valueOf(12L), outputTwelve.getKey());
         Assert.assertEquals("First Name Test12", outputTwelve.getFirstName());
         Assert.assertEquals("Last Name Test12", outputTwelve.getSecondName());
         Assert.assertEquals("Addres Test12", outputTwelve.getAddress());
