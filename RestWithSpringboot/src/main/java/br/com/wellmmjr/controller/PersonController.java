@@ -26,7 +26,8 @@ public class PersonController {
 //	@RequestMapping(value="/create", method = RequestMethod.POST, 
 //			produces= MediaType.APPLICATION_JSON_VALUE, 
 //			consumes= MediaType.APPLICATION_JSON_VALUE) <--- anotações utilizadas em versões anteriores do springboot para com seus verbos
-	@PostMapping(value = "/create")
+	@PostMapping(value = "/create", produces = {"application/json", "application/xml", "application/x-yaml"}, 
+			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO create(@RequestBody PersonVO person){
 		
 		return services.createPerson(person);
@@ -36,7 +37,8 @@ public class PersonController {
 //	@RequestMapping(value="/update", method = RequestMethod.PUT, 
 //			produces= MediaType.APPLICATION_JSON_VALUE, 
 //			consumes= MediaType.APPLICATION_JSON_VALUE)
-	@PutMapping(value = "/update")
+	@PutMapping(value = "/update", produces = {"application/json", "application/xml", "application/x-yaml"}, 
+			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO update(@RequestBody PersonVO person){
 		
 		return services.updatePerson(person);
@@ -55,7 +57,7 @@ public class PersonController {
 	
 //	@RequestMapping(method = RequestMethod.GET, 
 //			produces= MediaType.APPLICATION_JSON_VALUE)
-	@GetMapping
+	@GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
 	public List<PersonVO> findAll(){
 		
 		return services.findAll();
@@ -64,7 +66,7 @@ public class PersonController {
 
 //	@RequestMapping(value="/{id}", method = RequestMethod.GET, 
 //			produces= MediaType.APPLICATION_JSON_VALUE)
-	@GetMapping("/{id}")
+	@GetMapping(value="/{id}", produces = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO findById(@PathVariable("id" ) Long id){
 		
 		return services.findById(id);
