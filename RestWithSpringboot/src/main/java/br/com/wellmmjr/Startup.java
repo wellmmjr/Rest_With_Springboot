@@ -12,5 +12,11 @@ public class Startup {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Startup.class, args);
+		
+		
+//		para quando realizar metodos que registram Users: usar desta maneira a criptografia das senhas:::::
+//		
+//		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(16);
+//		String return = bCryptPasswordEncoder.encode("my password here");
 	}
 }
