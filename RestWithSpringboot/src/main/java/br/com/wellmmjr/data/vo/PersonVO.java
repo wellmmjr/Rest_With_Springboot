@@ -3,7 +3,7 @@ package br.com.wellmmjr.data.vo;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PersonVO implements Serializable{
+public class PersonVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
