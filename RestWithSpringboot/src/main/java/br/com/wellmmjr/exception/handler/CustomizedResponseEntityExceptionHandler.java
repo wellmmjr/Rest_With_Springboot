@@ -11,6 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.wellmmjr.exception.ExceptionResponse;
+import br.com.wellmmjr.exception.InvalidJWTAuthenticationException;
 import br.com.wellmmjr.exception.ResourceNotFoundException;
 
 @RestController
@@ -30,6 +31,16 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request){
+		ExceptionResponse exceptionRresponse = 
+				new ExceptionResponse(
+						new Date(), 
+						ex.getMessage(), 
+						request.getDescription(false));
+		return new ResponseEntity<>(exceptionRresponse, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(InvalidJWTAuthenticationException.class)
+	public final ResponseEntity<ExceptionResponse> invalidJWTAuthenticationException(Exception ex, WebRequest request){
 		ExceptionResponse exceptionRresponse = 
 				new ExceptionResponse(
 						new Date(), 
