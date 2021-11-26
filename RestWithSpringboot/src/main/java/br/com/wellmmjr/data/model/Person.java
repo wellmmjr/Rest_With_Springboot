@@ -1,5 +1,6 @@
 package br.com.wellmmjr.data.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -11,11 +12,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="person") //utilizado para distinguir a inicial minuscula ao hibernate no banco
-public class Person {
+public class Person implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // hibernate será responsavel por gerar os ids
-	private long id;
+	private Long id;
 	
 	@Column(name="first_name", nullable = false, length = 20)
 	private String firstName;
@@ -33,10 +36,10 @@ public class Person {
 		
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {

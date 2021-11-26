@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.wellmmjr.data.vo.v1.PersonVO;
 import br.com.wellmmjr.services.PersonServices;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value="Person Endpoints", description = "Accepts and provides entity Person's xml, x-yaml, json contents", 
+tags= {"Person Endpoints", "Person"})
 @RestController
 @RequestMapping("/api/person/v1")
 public class PersonController {
@@ -27,6 +31,7 @@ public class PersonController {
 	private PersonServices services;
 	
 
+	@ApiOperation(value="Allows create Person by this endpoint")
 	@PostMapping(value = "/create", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO create(@RequestBody PersonVO person){
@@ -37,6 +42,7 @@ public class PersonController {
 		
 	}
 	
+	@ApiOperation(value="Allows update Person by id through endpoint")
 	@PutMapping(value = "/update", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO update(@RequestBody PersonVO person){
@@ -47,6 +53,7 @@ public class PersonController {
 		
 	}
 	
+	@ApiOperation(value="Delete Person's info by its id")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id" ) Long id){
 		
@@ -55,6 +62,7 @@ public class PersonController {
 		
 	}
 	
+	@ApiOperation(value="Deliver a list with all Person in database")
 	@GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
 	public List<PersonVO> findAll(){
 		List<PersonVO> personVO = services.findAll();
@@ -67,6 +75,7 @@ public class PersonController {
 		
 	}
 
+	@ApiOperation(value="Loads Person's info by its id")
 	@GetMapping(value="/{id}", produces = {"application/json", "application/xml", "application/x-yaml"})
 	public PersonVO findById(@PathVariable("id" ) Long id){
 		
