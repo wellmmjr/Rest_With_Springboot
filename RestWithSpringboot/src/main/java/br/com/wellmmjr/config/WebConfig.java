@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import br.com.wellmmjr.serialization.converter.YamlJackson2HttpMessageConverter;
@@ -21,6 +22,11 @@ public class WebConfig implements WebMvcConfigurer{
 		converters.add(new YamlJackson2HttpMessageConverter());
 	}
 	
+	//método para tornar o CORS global para todas as classes do projeto sem necessidade de especificar por classe
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**") // por padrão, especificaria apenas GET POST PUT DELETE
+			.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH", "TRACE", "CONNECT"); // parametro adicionado para suportar demais verbos
+	}	
 	
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
@@ -68,5 +74,5 @@ public class WebConfig implements WebMvcConfigurer{
 		.mediaType("x-yaml", MEDIA_TYPE_YAML); //adicionado para compatibilidade com estrututra YAML
 		
 	}
-
+	
 }

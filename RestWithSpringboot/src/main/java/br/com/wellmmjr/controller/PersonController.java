@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import br.com.wellmmjr.services.PersonServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+//@CrossOrigin desta maneira CORS será implementado de maneira global para os métodos desta classe
 @Api(value="Person Endpoints", description = "Accepts and provides entity Person's xml, x-yaml, json contents", 
 tags= {"Person Endpoints", "Person"})
 @RestController
@@ -31,6 +33,7 @@ public class PersonController {
 	private PersonServices services;
 	
 
+//	@CrossOrigin desta maneira o CORS será implementado apenas para este método
 	@ApiOperation(value="Allows create Person by this endpoint")
 	@PostMapping(value = "/create", produces = {"application/json", "application/xml", "application/x-yaml"}, 
 			consumes = {"application/json", "application/xml", "application/x-yaml"})
@@ -62,6 +65,7 @@ public class PersonController {
 		
 	}
 	
+	@CrossOrigin(origins= {"https://www.google.com"}) // desta maneira o CORS pode ser configurado para um ou mais dominios para cruzamento
 	@ApiOperation(value="Deliver a list with all Person in database")
 	@GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
 	public List<PersonVO> findAll(){
